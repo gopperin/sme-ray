@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package proto;
+
+service Version {
+    rpc GetVersion(VersionRequest) returns (VersionResponse) {}
+    rpc CheckVersion(CheckVersionRequest) returns (CheckVersionResponse) {}
+}
+
+message VersionRequest {
+    string version = 1;
+}
+
+message VersionResponse {
+    string version = 1;
+}
+
+message CheckVersionRequest {
+    string version = 1;
+}
+
+message CheckVersionResponse {
+    bool update = 1;
+    string msg = 2;
+}

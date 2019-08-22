@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+// Example message
+message Email {
+	// unique id
+	string to = 1;
+	// unix timestamp
+	string title = 2;
+	// message
+	string message = 3;
+}

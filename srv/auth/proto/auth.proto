@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package auth;
+
+service Auth {
+  rpc Login(LoginRequest) returns (LoginResult) {}  
+  rpc VerifyToken(Request) returns (Result) {}
+}
+
+message LoginRequest {
+  string user = 1;
+  string pwd = 2;
+}
+
+message LoginResult {
+  string token = 1;
+}
+
+message Request {
+  string authToken = 1;
+}
+
+message Result {
+  int64 state = 1;
+  string msg = 2;
+}
+
